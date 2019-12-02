@@ -72,7 +72,8 @@ public class Producent {
 			m.getMessageProperties().setContentType(MessageProperties.CONTENT_TYPE_JSON);
 			m.getMessageProperties().setDeliveryMode(MessageDeliveryMode.valueOf(deliveryMode));
 			// m.getMessageProperties().setDeliveryMode(MessageDeliveryMode.NON_PERSISTENT);
-			// m.getMessageProperties().setExpiration("1000");
+			if (!messageExpiration.isEmpty())
+				m.getMessageProperties().setExpiration(messageExpiration); // 1000 to sekunda
 			m.getMessageProperties().getHeaders().put("flow_id", flowId);
 			m.getMessageProperties().setReplyTo(replyTo);
 
