@@ -1,6 +1,7 @@
 package com.rabbitmq.cwiczenia.rabbitmqworker1.service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -17,6 +18,7 @@ import com.rabbitmq.cwiczenia.rabbitmqworker1.Producent;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dao.EgRepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.JPAEgRepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.AurumSntAnl;
+import com.rabbitmq.cwiczenia.rabbitmqworker1.model.SyntUmAkt;
 
 @RestController
 @RequestMapping("/api")
@@ -52,23 +54,25 @@ public class SendService {
 
 		return "Success";
 	}
-	/*
-	 * @RequestMapping("/getSyntUmAkt") // wskazanie pod jakim adresem dostępna jest
-	 * metoda (EndPoint)
-	 * 
-	 * @ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym
-	 * przypadku String) // był zwracany nie do modelu dla widoku lecz jako obiekt
-	 * public String getSyntUmAkt() { // sygnatura metody
-	 * System.out.println(" hello "); String out = "";
-	 * 
-	 * out = egRepository.getQuery(); System.out.println(out); return out; // return
-	 * "Hello World! :)"; // zwracana wartość przez przeglądarkę }
-	 */
+
+	@GetMapping("/getSyntUmAkt") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
+	@ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym przypadku String)
+	// był zwracany nie do modelu dla widoku lecz jako obiekt
+	public List<SyntUmAkt> getSyntUmAkt() { // sygnatura metody
+		// System.out.println(" hello ");
+		// String out = "";
+
+		// out = egRepository.getQuery();
+		// System.out.println(out);
+		return egRepository.findAll();
+		// return "Hello World! :)";
+		// zwracana wartość przez przeglądarkę
+	}
 
 	// @RequestMapping("/getAurumSntAnl")
 	@GetMapping("/getAurumSntAnl")
 	@ResponseStatus(HttpStatus.OK)
-	public @ResponseBody Iterable<AurumSntAnl> getAurumSntAnl() {
+	public List<AurumSntAnl> getAurumSntAnl() {
 		System.out.println("getAurumSntAnl");
 		/*
 		 * List<SyntUmAkt> ls = findAll();
