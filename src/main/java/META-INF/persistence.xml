@@ -3,6 +3,10 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="rabbitmq-worker1">
 		<class>com.rabbitmq.cwiczenia.rabbitmqworker1.model.AurumSntAnl</class>
+		<class>com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkAdresy</class>
+		<class>com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci</class>
+		<class>com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienciDane</class>
+		<class>com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkTelefony</class>
 	</persistence-unit>
 </persistence>
 

@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rabbitmq.cwiczenia.rabbitmqworker1.Producent;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dao.EgRepository;
-import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.JPAEgRepository;
+import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.AurumSntAnlJPAEgRepository;
+import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.KlientJPARepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.AurumSntAnl;
+import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.SyntUmAkt;
 
 @RestController
@@ -34,7 +36,10 @@ public class SendService {
 	EgRepository egRepository;
 
 	@Autowired
-	JPAEgRepository jpaEgRepository;
+	AurumSntAnlJPAEgRepository aurumSntAnlJpaEgRepository;
+	
+	@Autowired
+	KlientJPARepository klientJPARepository;
 
 	@RequestMapping("/hello") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
 	@ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym przypadku String)
@@ -82,7 +87,17 @@ public class SendService {
 		 * String json = ""; try { json = mapper.writeValueAsString(ls); } catch
 		 * (JsonProcessingException e) { e.printStackTrace(); } return json; }
 		 */
-		return jpaEgRepository.findByklKod(new BigDecimal("41787"));
+		return aurumSntAnlJpaEgRepository.findByklKod(new BigDecimal("41787"));
 	}
 
+	@GetMapping("/getKlient/{kodCKK}")
+	@ResponseStatus(HttpStatus.OK)
+	public CkkKlienci getKlient(@PathVariable("kodCKK") Long kodCKK) {
+		System.out.println("getKlienci");
+
+
+		return klientJPARepository.findByKlKod(kodCKK);
+	}
+	
+	
 }
