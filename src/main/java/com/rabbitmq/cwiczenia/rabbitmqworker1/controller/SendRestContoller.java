@@ -1,4 +1,4 @@
-package com.rabbitmq.cwiczenia.rabbitmqworker1.service;
+package com.rabbitmq.cwiczenia.rabbitmqworker1.controller;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -32,10 +32,10 @@ import pl.santanderl.adapter.mq.Header;
 import pl.santanderl.adapter.mq.Message;
 import pl.santanderl.adapter.mq.Producer;
 
-@Component
+//@Component
 @RestController
 @RequestMapping("/api")
-public class SendService {
+public class SendRestContoller {
 
 	//@Autowired
 	//private Producent prod;
@@ -84,7 +84,9 @@ public class SendService {
 		
 		System.out.println("Sending:" + message);
 		
-		Message m = new Message(new Header(), message);
+		Header header = new Header();
+		header.setFlowId("262");
+		Message m = new Message(header, message);
 		
 		pr.generateTask(m);
 		//prod.send(message);
