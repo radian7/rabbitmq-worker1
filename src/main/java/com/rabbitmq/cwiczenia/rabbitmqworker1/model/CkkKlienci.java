@@ -2,6 +2,9 @@ package com.rabbitmq.cwiczenia.rabbitmqworker1.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import org.hibernate.annotations.Where;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +15,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="CKK_KLIENCI")
+@Table(name="CKK_KLIENCI", schema = "egadm1")
 @NamedQuery(name="CkkKlienci.findAll", query="SELECT c FROM CkkKlienci c")
 public class CkkKlienci implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -105,6 +108,7 @@ public class CkkKlienci implements Serializable {
 
 	//bi-directional many-to-one association to CkkKlienciDane
 	@OneToMany(mappedBy="ckkKlienci")
+	//@Where(clause = "KLD_F_AKTUALNE = 'T'")
 	private List<CkkKlienciDane> ckkKlienciDanes;
 
 	//bi-directional many-to-one association to CkkTelefony

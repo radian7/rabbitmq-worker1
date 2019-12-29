@@ -3,6 +3,8 @@ package com.rabbitmq.cwiczenia.rabbitmqworker1.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import org.hibernate.annotations.Where;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.math.BigDecimal;
@@ -14,8 +16,9 @@ import java.util.Date;
  * 
  */
 @Entity
-@Table(name="CKK_ADRESY")
+@Table(name="CKK_ADRESY", schema = "egadm1")
 @NamedQuery(name="CkkAdresy.findAll", query="SELECT c FROM CkkAdresy c")
+@Where(clause = "ADR_F_AKTUALNE = 'T'")
 public class CkkAdresy implements Serializable {
 	private static final long serialVersionUID = 1L;
 

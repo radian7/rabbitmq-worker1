@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rabbitmq.cwiczenia.rabbitmqworker1.dto.KlientDTO;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.service.KlientService;
 
@@ -24,7 +25,7 @@ public class CKKServerQ {
 	
 	@GetMapping("/klient/{kodCKK}")
 	@ResponseStatus(HttpStatus.OK)
-	public CkkKlienci getKlient(@PathVariable("kodCKK") Long kodCKK) {
+	public KlientDTO getKlient(@PathVariable("kodCKK") Long kodCKK) {
 		System.out.println("getKlient");
 
 
