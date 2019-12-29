@@ -4,20 +4,17 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
-import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkAdresy;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienciDane;
-import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkTelefony;
+
 
 import lombok.Data;
 
 @Data
 public class KlientDTO {
 
+	@JsonProperty("kodCkk")
 	private long klKod;
 
 	private Date klDataKontaEbok;
@@ -30,9 +27,9 @@ public class KlientDTO {
 
 	private List<AdresDTO> adresy;
 
-	private List<CkkKlienciDane> klienciDane;
+	private List<KlientDaneDTO> klienciDane;
 
-	private List<CkkTelefony> telefony;
+	private List<KontaktDTO> kontakty;
 
 	
 }

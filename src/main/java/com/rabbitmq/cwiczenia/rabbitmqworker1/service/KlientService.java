@@ -18,10 +18,8 @@ public class KlientService {
 	public KlientDTO findByKlKod( Long kodCKK ) {
 		
 		CkkKlienciMapper mapper = Mappers.getMapper(CkkKlienciMapper.class);
-		
-		CkkKlienci klienci = klientJPARepository.findByKlKod(kodCKK);
         
-		KlientDTO klient = mapper.mapToKlientDTO(klienci);
+		KlientDTO klient = mapper.mapToKlientDTO(klientJPARepository.findByKlKod(kodCKK));
 		
 		return klient;
 	}

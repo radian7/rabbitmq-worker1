@@ -551,3 +551,87 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 2019-12-29 20:10:15,117~~ INFO~~1624~~[SpringContextShutdownHook]~~a.LocalContainerEntityManagerFactoryBean~~Closing JPA EntityManagerFactory for persistence unit 'default'~~
 2019-12-29 20:10:15,119~~ INFO~~1624~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown initiated...~~
 2019-12-29 20:10:15,341~~ INFO~~1624~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown completed.~~
+2019-12-29 20:23:44,647~~ INFO~~7864~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Starting RabbitmqWorker1ApplicationTests on L828085 with PID 7864 (started by 159261 in D:\Workbench\git\rabbitmq-worker1)~~
+2019-12-29 20:23:44,648~~ INFO~~7864~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~No active profile set, falling back to default profiles: default~~
+2019-12-29 20:23:45,707~~ INFO~~7864~~[main]~~y.config.RepositoryConfigurationDelegate~~Bootstrapping Spring Data repositories in DEFAULT mode.~~
+2019-12-29 20:23:45,766~~ INFO~~7864~~[main]~~y.config.RepositoryConfigurationDelegate~~Finished Spring Data repository scanning in 51ms. Found 2 repository interfaces.~~
+2019-12-29 20:23:46,153~~ INFO~~7864~~[main]~~trationDelegate$BeanPostProcessorChecker~~Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)~~
+2019-12-29 20:23:46,443~~ INFO~~7864~~[main]~~rg.hibernate.jpa.internal.util.LogHelper~~HHH000204: Processing PersistenceUnitInfo [name: default]~~
+2019-12-29 20:23:46,500~~ INFO~~7864~~[main]~~org.hibernate.Version                   ~~HHH000412: Hibernate Core {5.4.6.Final}~~
+2019-12-29 20:23:46,613~~ INFO~~7864~~[main]~~org.hibernate.annotations.common.Version~~HCANN000001: Hibernate Commons Annotations {5.1.0.Final}~~
+2019-12-29 20:23:46,704~~ INFO~~7864~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Starting...~~
+2019-12-29 20:23:47,232~~ INFO~~7864~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Start completed.~~
+2019-12-29 20:23:47,247~~ INFO~~7864~~[main]~~org.hibernate.dialect.Dialect           ~~HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect~~
+2019-12-29 20:23:55,126~~ INFO~~7864~~[main]~~a.platform.internal.JtaPlatformInitiator~~HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]~~
+2019-12-29 20:23:55,207~~ INFO~~7864~~[main]~~a.LocalContainerEntityManagerFactoryBean~~Initialized JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:23:56,010~~ WARN~~7864~~[main]~~JpaBaseConfiguration$JpaWebConfiguration~~spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning~~
+2019-12-29 20:23:56,518~~ INFO~~7864~~[main]~~duling.concurrent.ThreadPoolTaskExecutor~~Initializing ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:23:57,578~~ INFO~~7864~~[main]~~tuate.endpoint.web.EndpointLinksResolver~~Exposing 2 endpoint(s) beneath base path '/actuator'~~
+2019-12-29 20:23:57,626~~ INFO~~7864~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Started RabbitmqWorker1ApplicationTests in 13.217 seconds (JVM running for 14.011)~~
+2019-12-29 20:23:57,734~~ INFO~~7864~~[SpringContextShutdownHook]~~duling.concurrent.ThreadPoolTaskExecutor~~Shutting down ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:23:57,737~~ INFO~~7864~~[SpringContextShutdownHook]~~a.LocalContainerEntityManagerFactoryBean~~Closing JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:23:57,739~~ INFO~~7864~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown initiated...~~
+2019-12-29 20:23:57,992~~ INFO~~7864~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown completed.~~
+2019-12-29 20:28:00,278~~ INFO~~11312~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Starting RabbitmqWorker1ApplicationTests on L828085 with PID 11312 (started by 159261 in D:\Workbench\git\rabbitmq-worker1)~~
+2019-12-29 20:28:00,279~~ INFO~~11312~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~No active profile set, falling back to default profiles: default~~
+2019-12-29 20:28:01,469~~ INFO~~11312~~[main]~~y.config.RepositoryConfigurationDelegate~~Bootstrapping Spring Data repositories in DEFAULT mode.~~
+2019-12-29 20:28:01,532~~ INFO~~11312~~[main]~~y.config.RepositoryConfigurationDelegate~~Finished Spring Data repository scanning in 54ms. Found 2 repository interfaces.~~
+2019-12-29 20:28:01,848~~ INFO~~11312~~[main]~~trationDelegate$BeanPostProcessorChecker~~Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)~~
+2019-12-29 20:28:02,192~~ INFO~~11312~~[main]~~rg.hibernate.jpa.internal.util.LogHelper~~HHH000204: Processing PersistenceUnitInfo [name: default]~~
+2019-12-29 20:28:02,247~~ INFO~~11312~~[main]~~org.hibernate.Version                   ~~HHH000412: Hibernate Core {5.4.6.Final}~~
+2019-12-29 20:28:02,366~~ INFO~~11312~~[main]~~org.hibernate.annotations.common.Version~~HCANN000001: Hibernate Commons Annotations {5.1.0.Final}~~
+2019-12-29 20:28:02,458~~ INFO~~11312~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Starting...~~
+2019-12-29 20:28:03,011~~ INFO~~11312~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Start completed.~~
+2019-12-29 20:28:03,026~~ INFO~~11312~~[main]~~org.hibernate.dialect.Dialect           ~~HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect~~
+2019-12-29 20:28:12,467~~ INFO~~11312~~[main]~~a.platform.internal.JtaPlatformInitiator~~HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]~~
+2019-12-29 20:28:12,678~~ INFO~~11312~~[main]~~a.LocalContainerEntityManagerFactoryBean~~Initialized JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:28:13,500~~ WARN~~11312~~[main]~~JpaBaseConfiguration$JpaWebConfiguration~~spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning~~
+2019-12-29 20:28:14,051~~ INFO~~11312~~[main]~~duling.concurrent.ThreadPoolTaskExecutor~~Initializing ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:28:15,060~~ INFO~~11312~~[main]~~tuate.endpoint.web.EndpointLinksResolver~~Exposing 2 endpoint(s) beneath base path '/actuator'~~
+2019-12-29 20:28:15,113~~ INFO~~11312~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Started RabbitmqWorker1ApplicationTests in 15.097 seconds (JVM running for 15.917)~~
+2019-12-29 20:28:15,225~~ INFO~~11312~~[SpringContextShutdownHook]~~duling.concurrent.ThreadPoolTaskExecutor~~Shutting down ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:28:15,228~~ INFO~~11312~~[SpringContextShutdownHook]~~a.LocalContainerEntityManagerFactoryBean~~Closing JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:28:15,229~~ INFO~~11312~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown initiated...~~
+2019-12-29 20:28:17,198~~ INFO~~11312~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown completed.~~
+2019-12-29 20:31:37,835~~ INFO~~2604~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Starting RabbitmqWorker1ApplicationTests on L828085 with PID 2604 (started by 159261 in D:\Workbench\git\rabbitmq-worker1)~~
+2019-12-29 20:31:37,837~~ INFO~~2604~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~No active profile set, falling back to default profiles: default~~
+2019-12-29 20:31:38,921~~ INFO~~2604~~[main]~~y.config.RepositoryConfigurationDelegate~~Bootstrapping Spring Data repositories in DEFAULT mode.~~
+2019-12-29 20:31:38,977~~ INFO~~2604~~[main]~~y.config.RepositoryConfigurationDelegate~~Finished Spring Data repository scanning in 49ms. Found 2 repository interfaces.~~
+2019-12-29 20:31:39,359~~ INFO~~2604~~[main]~~trationDelegate$BeanPostProcessorChecker~~Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)~~
+2019-12-29 20:31:39,633~~ INFO~~2604~~[main]~~rg.hibernate.jpa.internal.util.LogHelper~~HHH000204: Processing PersistenceUnitInfo [name: default]~~
+2019-12-29 20:31:39,695~~ INFO~~2604~~[main]~~org.hibernate.Version                   ~~HHH000412: Hibernate Core {5.4.6.Final}~~
+2019-12-29 20:31:39,808~~ INFO~~2604~~[main]~~org.hibernate.annotations.common.Version~~HCANN000001: Hibernate Commons Annotations {5.1.0.Final}~~
+2019-12-29 20:31:39,889~~ INFO~~2604~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Starting...~~
+2019-12-29 20:31:40,875~~ INFO~~2604~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Start completed.~~
+2019-12-29 20:31:40,890~~ INFO~~2604~~[main]~~org.hibernate.dialect.Dialect           ~~HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect~~
+2019-12-29 20:31:49,526~~ INFO~~2604~~[main]~~a.platform.internal.JtaPlatformInitiator~~HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]~~
+2019-12-29 20:31:49,641~~ INFO~~2604~~[main]~~a.LocalContainerEntityManagerFactoryBean~~Initialized JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:31:50,488~~ WARN~~2604~~[main]~~JpaBaseConfiguration$JpaWebConfiguration~~spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning~~
+2019-12-29 20:31:51,246~~ INFO~~2604~~[main]~~duling.concurrent.ThreadPoolTaskExecutor~~Initializing ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:31:52,457~~ INFO~~2604~~[main]~~tuate.endpoint.web.EndpointLinksResolver~~Exposing 2 endpoint(s) beneath base path '/actuator'~~
+2019-12-29 20:31:52,526~~ INFO~~2604~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Started RabbitmqWorker1ApplicationTests in 14.931 seconds (JVM running for 15.727)~~
+2019-12-29 20:31:52,661~~ INFO~~2604~~[SpringContextShutdownHook]~~duling.concurrent.ThreadPoolTaskExecutor~~Shutting down ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:31:52,666~~ INFO~~2604~~[SpringContextShutdownHook]~~a.LocalContainerEntityManagerFactoryBean~~Closing JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:31:52,668~~ INFO~~2604~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown initiated...~~
+2019-12-29 20:31:53,003~~ INFO~~2604~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown completed.~~
+2019-12-29 20:35:38,301~~ INFO~~12720~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Starting RabbitmqWorker1ApplicationTests on L828085 with PID 12720 (started by 159261 in D:\Workbench\git\rabbitmq-worker1)~~
+2019-12-29 20:35:38,303~~ INFO~~12720~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~No active profile set, falling back to default profiles: default~~
+2019-12-29 20:35:39,405~~ INFO~~12720~~[main]~~y.config.RepositoryConfigurationDelegate~~Bootstrapping Spring Data repositories in DEFAULT mode.~~
+2019-12-29 20:35:39,460~~ INFO~~12720~~[main]~~y.config.RepositoryConfigurationDelegate~~Finished Spring Data repository scanning in 47ms. Found 2 repository interfaces.~~
+2019-12-29 20:35:39,792~~ INFO~~12720~~[main]~~trationDelegate$BeanPostProcessorChecker~~Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)~~
+2019-12-29 20:35:40,157~~ INFO~~12720~~[main]~~rg.hibernate.jpa.internal.util.LogHelper~~HHH000204: Processing PersistenceUnitInfo [name: default]~~
+2019-12-29 20:35:40,216~~ INFO~~12720~~[main]~~org.hibernate.Version                   ~~HHH000412: Hibernate Core {5.4.6.Final}~~
+2019-12-29 20:35:40,330~~ INFO~~12720~~[main]~~org.hibernate.annotations.common.Version~~HCANN000001: Hibernate Commons Annotations {5.1.0.Final}~~
+2019-12-29 20:35:40,411~~ INFO~~12720~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Starting...~~
+2019-12-29 20:35:41,024~~ INFO~~12720~~[main]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Start completed.~~
+2019-12-29 20:35:41,039~~ INFO~~12720~~[main]~~org.hibernate.dialect.Dialect           ~~HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect~~
+2019-12-29 20:35:52,611~~ INFO~~12720~~[main]~~a.platform.internal.JtaPlatformInitiator~~HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]~~
+2019-12-29 20:35:52,839~~ INFO~~12720~~[main]~~a.LocalContainerEntityManagerFactoryBean~~Initialized JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:35:53,716~~ WARN~~12720~~[main]~~JpaBaseConfiguration$JpaWebConfiguration~~spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning~~
+2019-12-29 20:35:54,385~~ INFO~~12720~~[main]~~duling.concurrent.ThreadPoolTaskExecutor~~Initializing ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:35:55,588~~ INFO~~12720~~[main]~~tuate.endpoint.web.EndpointLinksResolver~~Exposing 2 endpoint(s) beneath base path '/actuator'~~
+2019-12-29 20:35:55,664~~ INFO~~12720~~[main]~~qworker1.RabbitmqWorker1ApplicationTests~~Started RabbitmqWorker1ApplicationTests in 18.43 seconds (JVM running for 19.23)~~
+2019-12-29 20:35:55,817~~ INFO~~12720~~[SpringContextShutdownHook]~~duling.concurrent.ThreadPoolTaskExecutor~~Shutting down ExecutorService 'applicationTaskExecutor'~~
+2019-12-29 20:35:55,821~~ INFO~~12720~~[SpringContextShutdownHook]~~a.LocalContainerEntityManagerFactoryBean~~Closing JPA EntityManagerFactory for persistence unit 'default'~~
+2019-12-29 20:35:55,823~~ INFO~~12720~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown initiated...~~
+2019-12-29 20:35:56,094~~ INFO~~12720~~[SpringContextShutdownHook]~~com.zaxxer.hikari.HikariDataSource      ~~HikariPool-1 - Shutdown completed.~~

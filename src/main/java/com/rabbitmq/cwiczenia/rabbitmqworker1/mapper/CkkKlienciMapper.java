@@ -11,7 +11,7 @@ import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci;
 public interface CkkKlienciMapper {
 
 	@Mapping(source = "ckkAdresies", target = "adresy")
-	@Mapping(source = "ckkTelefonies", target = "telefony")
+	@Mapping(source = "ckkTelefonies", target = "kontakty")
 	
 	//CkkKlienci mapToCkkKlienci(KlientDTO klientDTO);
 	KlientDTO mapToKlientDTO(CkkKlienci ckkKlienci);
