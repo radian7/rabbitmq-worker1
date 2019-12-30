@@ -39,7 +39,7 @@ public class CKKServerAmqpQ {
 	
 	@RabbitListener(queues = "q.test")
 	public Message process(Message request) {
-		logger.info("process: {}", request.toString());
+		logger.info("RPC server process: {}", request.toString());
 		
 		KlientRequestDTO bodyRequest = new KlientRequestDTO();
 		try {
@@ -49,10 +49,12 @@ public class CKKServerAmqpQ {
 			e.printStackTrace();
 		}
 		
-		
+		logger.info("RPC server obtainded : {}", bodyRequest.getKodCKK());
 		
 		//AmqpProducentConfig.Flow flow = prodConf.getFlows().stream().filter(x -> x.flowId.equals(mess.getHeader().getFlowId())).findFirst().get();
-		AmqpProducentConfig.Flow flow = prodConf.getFlows().stream().filter(x -> x.getFlowId().equals("rpcTEstFlowReq")).findFirst().get();
+		AmqpProducentConfig.Flow flow = prodConf.getFlows().stream().filter(x -> x.getFlowId().equals("rpcTestFlowReq")).findFirst().get();
+		
+		logger.info("RPC server finded  rpcTestFlowReq");
 		
 		MessageProperties responseMessProperties = new MessageProperties();
 		responseMessProperties.getHeaders().put("api_version", "1.0.4");
@@ -63,13 +65,17 @@ public class CKKServerAmqpQ {
 		responseMessProperties.setDeliveryMode(MessageDeliveryMode.valueOf(flow.getDeliveryMode()));
 		if (!flow.getMessageExpiration().isEmpty())
 			responseMessProperties.setExpiration(flow.getMessageExpiration()); // 1000 to sekunda
-		responseMessProperties.getHeaders().put("flow_id", "rpcTEstFlowRes");
+		responseMessProperties.getHeaders().put("flow_id", "rpcTestFlowRes");
 		//responseMessProperties.setReplyTo(flow.replyTo);
 
 		responseMessProperties.setTimestamp(new Date());
 		responseMessProperties.getHeaders().put("user_id", "Adi");
 		
+		logger.info("RPC server staring finding Klient : {}", bodyRequest.getKodCKK());
+		
 		KlientDTO kl = klientService.findByKlKod(  bodyRequest.getKodCKK() );
+		
+		logger.info("RPC server finded KlientDTO : {}", kl.getKlKod());
 		
 		//String topicMessage = JSON.toJSONString(sendMsg, JsonFilter.filter);
 		//KlientRequestDTO bRequest = objectMapper.readValue(request.getBody(), KlientRequestDTO.class);
@@ -82,7 +88,8 @@ public class CKKServerAmqpQ {
 		}
 		
 		Message responseMessage = new Message(bodyResponse.getBytes(), responseMessProperties);
-		logger.info("Return: {}", responseMessage.toString());
+		logger.info("RPC server Return: {}", responseMessage.toString());
+		System.out.println("RPC server Return: " + responseMessage.toString());
 		return responseMessage;
 	}
 	

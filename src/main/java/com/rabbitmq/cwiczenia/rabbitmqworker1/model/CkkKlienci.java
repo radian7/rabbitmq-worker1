@@ -103,16 +103,16 @@ public class CkkKlienci implements Serializable {
 	private String klZrodloDanych;
 
 	//bi-directional many-to-one association to CkkAdresy
-	@OneToMany(mappedBy="ckkKlienci")
+	@OneToMany(mappedBy="ckkKlienci") // , fetch=FetchType.EAGER
 	private List<CkkAdresy> ckkAdresies;
 
 	//bi-directional many-to-one association to CkkKlienciDane
-	@OneToMany(mappedBy="ckkKlienci")
+	@OneToMany(mappedBy="ckkKlienci") // , fetch=FetchType.EAGER
 	//@Where(clause = "KLD_F_AKTUALNE = 'T'")
 	private List<CkkKlienciDane> ckkKlienciDanes;
 
 	//bi-directional many-to-one association to CkkTelefony
-	@OneToMany(mappedBy="ckkKlienci")
+	@OneToMany(mappedBy="ckkKlienci") //, fetch=FetchType.EAGER
 	private List<CkkTelefony> ckkTelefonies;
 
 	public CkkKlienci() {

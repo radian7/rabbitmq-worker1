@@ -52,14 +52,16 @@ public class AmqpPublisher implements Producer {
 			m.getMessageProperties().setTimestamp(new Date());
 			m.getMessageProperties().getHeaders().put("user_id", "Adi");
 
-			System.out.println("Sended to vHost:" + vHost);
-			System.out.println("Sended to ex:" + flow.exchange);
-			System.out.println("Sended to routingkey:" + flow.routing_key);
-			System.out.println("Sended message:" + mess.getBody());
-			logger.info("generateTask: Sended to vHost:{}, EX: {}, routingkey: {}", vHost, flow.exchange, flow.routing_key);
-			
+
 			return m;
 		});
+		
+		System.out.println("Sended to vHost:" + vHost);
+		System.out.println("Sended to ex:" + flow.exchange);
+		System.out.println("Sended to routingkey:" + flow.routing_key);
+		System.out.println("Sended message:" + mess.getBody());
+		logger.info("generateTask: Sended to vHost:{}, EX: {}, routingkey: {}", vHost, flow.exchange, flow.routing_key);
+		
 		
 	}
 

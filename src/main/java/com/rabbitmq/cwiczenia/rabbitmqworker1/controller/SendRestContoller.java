@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dao.EgRepository;
+import com.rabbitmq.cwiczenia.rabbitmqworker1.dto.KlientRequestDTO;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.AurumSntAnlJPAEgRepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.KlientJPARepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.AurumSntAnl;
@@ -31,6 +32,7 @@ import com.rabbitmq.cwiczenia.rabbitmqworker1.model.SyntUmAkt;
 import pl.santanderl.adapter.mq.Header;
 import pl.santanderl.adapter.mq.Message;
 import pl.santanderl.adapter.mq.Producer;
+import pl.santanderl.adapter.rpc.amqp.CKKClientAmqpQ;
 
 //@Component
 @RestController
@@ -42,6 +44,9 @@ public class SendRestContoller {
 
 	@Autowired
 	Producer pr;
+	
+	@Autowired
+	CKKClientAmqpQ ckkkl;
 	
 	@Autowired
 	DataSource dataSource;
@@ -73,14 +78,14 @@ public class SendRestContoller {
 		return "Hello World! :)"; // zwracana wartość przez przeglądarkę
 	}
 
-	// http://localhost:8081/api/send/test111
-	@RequestMapping("/send/{mess}")
+	// http://localhost:8081/api/sendfile
+	@RequestMapping("/sendfile")
 	@ResponseBody
-	public String send(@PathVariable("mess") String message) {
+	public String sendFile() {
 		
 		System.out.println("Send in:" );
 		
-		message = readLineByLineJava8("mess.txt");
+		String message = readLineByLineJava8("mess.txt");
 		
 		System.out.println("Sending:" + message);
 		
@@ -94,6 +99,23 @@ public class SendRestContoller {
 		return "Success";
 	}
 
+	@RequestMapping("/sendrpc/{klKod}")
+	@ResponseBody
+	public String sendRPC( @PathVariable("klKod") String klKod ) {
+		
+		System.out.println("Send RPC in:" );
+		
+		
+		System.out.println("Sending:" + klKod);
+		
+		KlientRequestDTO klReq = new KlientRequestDTO();
+		klReq.setKodCKK(new Long(klKod));
+		
+		ckkkl.sendRPC(klReq);
+
+		return "Success";
+	}
+	
 	@GetMapping("/getSyntUmAkt") // wskazanie pod jakim adresem dostępna jest metoda (EndPoint)
 	@ResponseBody // wskazówka dla kontekstu Spring, aby zawartość metody (w tym przypadku String)
 	// był zwracany nie do modelu dla widoku lecz jako obiekt
