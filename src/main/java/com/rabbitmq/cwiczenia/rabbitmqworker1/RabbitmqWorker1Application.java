@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 // , "com.rabbitmq.cwiczenia.rabbitmqworker1.service" 
 @SpringBootApplication
 //@ComponentScan( "pl.santanderl.adapter.mq.amqp" )
-@ComponentScan( { "pl.santanderl.adapter.rpc.rest", "com.rabbitmq.cwiczenia.rabbitmqworker1.service", "com.rabbitmq.cwiczenia.rabbitmqworker1.controller", "com.rabbitmq.cwiczenia.rabbitmqworker1.model", "com.rabbitmq.cwiczenia.rabbitmqworker1.dao", "pl.santanderl.adapter.mq.amqp" } )
+@ComponentScan( { "pl.santanderl.adapter.rpc.rest", "pl.santanderl.adapter.rpc.amqp", "com.rabbitmq.cwiczenia.rabbitmqworker1.service", "com.rabbitmq.cwiczenia.rabbitmqworker1.controller", "com.rabbitmq.cwiczenia.rabbitmqworker1.model", "com.rabbitmq.cwiczenia.rabbitmqworker1.dao", "pl.santanderl.adapter.mq.amqp" } )
 public class RabbitmqWorker1Application  {
 
 	//private static final Logger logger = LogManager.getLogger(RabbitmqWorker1Application.class);

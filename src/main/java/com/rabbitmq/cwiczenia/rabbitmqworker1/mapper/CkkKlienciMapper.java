@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dto.KlientDTO;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci;
 
-@Mapper(uses = {CkkAdresyMapper.class})
+@Mapper(uses = {CkkAdresyMapper.class, CkkTelefonyMapper.class})
 public interface CkkKlienciMapper {
 
 	@Mapping(source = "ckkAdresies", target = "adresy")

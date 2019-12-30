@@ -44,8 +44,7 @@ public class AmqpPublisher implements Producer {
 			m.getMessageProperties().setContentEncoding("UTF-8");
 			m.getMessageProperties().setContentType(MessageProperties.CONTENT_TYPE_JSON);
 			m.getMessageProperties().setDeliveryMode(MessageDeliveryMode.valueOf(flow.deliveryMode));
-			// m.getMessageProperties().setDeliveryMode(MessageDeliveryMode.NON_PERSISTENT);
-			if (!flow.messageExpiration.isEmpty())
+					if (!flow.messageExpiration.isEmpty())
 				m.getMessageProperties().setExpiration(flow.messageExpiration); // 1000 to sekunda
 			m.getMessageProperties().getHeaders().put("flow_id", flow.flowId);
 			m.getMessageProperties().setReplyTo(flow.replyTo);
