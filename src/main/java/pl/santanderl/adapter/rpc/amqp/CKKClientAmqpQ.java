@@ -16,9 +16,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dto.KlientRequestDTO;
 
-//import pl.santanderl.adapter.mq.Message;
+
 import pl.santanderl.adapter.mq.amqp.AmqpProducentConfig;
-import pl.santanderl.adapter.mq.amqp.AmqpPublisher;
 import pl.santanderl.adapter.rpc.Client;
 
 @Service
@@ -39,11 +38,11 @@ public class CKKClientAmqpQ implements Client {
 	
 	public void sendRPC(KlientRequestDTO klientDTO) {
 
-		System.out.println("sendRPC, obtaining:" + klientDTO.getKodCKK());
+		logger.info("sendRPC, obtaining:{}", klientDTO.getKodCKK());
 		
 		AmqpProducentConfig.Flow flow = prodConf.getFlows().stream().filter(x -> x.getFlowId().equals("rpcTestFlowReq")).findFirst().get();
 
-		System.out.println("sendRPC Finded rpcTestFlowReq" );
+		logger.info("sendRPC Finded rpcTestFlowReq" );
 		
 		MessageProperties requestMessProperties = new MessageProperties();
 		requestMessProperties.getHeaders().put("api_version", "1.0.4");
@@ -55,7 +54,7 @@ public class CKKClientAmqpQ implements Client {
 		if (!flow.getMessageExpiration().isEmpty())
 			requestMessProperties.setExpiration(flow.getMessageExpiration()); // 1000 to sekunda
 		requestMessProperties.getHeaders().put("flow_id", "rpcTestFlowReq");
-		//requestMessProperties.setReplyTo(flow.replyTo);
+		
 
 		requestMessProperties.setTimestamp(new Date());
 		requestMessProperties.getHeaders().put("user_id", "Adi");
@@ -67,26 +66,23 @@ public class CKKClientAmqpQ implements Client {
 		}
 		catch (JsonProcessingException e) {
 			e.printStackTrace();
+			logger.error("Error: {}", e.getMessage());
 		}
 		
 		
 		
 		Message requestMessage = new Message(requestBody.getBytes(), requestMessProperties);
 		
-		logger.info("generateRPC: {}", requestMessage.toString());
+		logger.info("sendRPC: {}", requestMessage.toString());
 		
-		//Message responseMessage = template.convertSendAndReceive();
 		
 		Message responseMessage = template.sendAndReceive(flow.getExchange(), flow.getRouting_key(), requestMessage);
 		
-		System.out.println("sendRPC Sended to vHost:" + vHost);
-		System.out.println("sendRPC Sended to ex:" + flow.getExchange());
-		System.out.println("sendRPC Sended to routingkey:" + flow.getRouting_key());
-		System.out.println("sendRPC Sended message:" + requestMessage.toString());
-		logger.info("generateRPC: Sended to vHost:{}, EX: {}, routingkey: {}", vHost, flow.getExchange(), flow.getRouting_key());
-		System.out.println("generateRPC: " + requestMessage.toString());
 		
-		logger.info("generateRPC, obtainded: {}",  responseMessage.toString());
+		logger.info("sendRPC: Sended to vHost:{}, EX: {}, routingkey: {}", vHost, flow.getExchange(), flow.getRouting_key());
+		logger.info("sendRPC Sended message:{}", requestMessage.toString());
+		
+		logger.info("sendRPC, obtainded: {}",  responseMessage.toString());
 		
 	}
 	

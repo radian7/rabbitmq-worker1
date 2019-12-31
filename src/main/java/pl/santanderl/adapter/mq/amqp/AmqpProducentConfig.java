@@ -3,14 +3,12 @@ package pl.santanderl.adapter.mq.amqp;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-//import lombok.Getter;
-//import lombok.Setter;
+
 
 @Component
-//@ConfigurationProperties(prefix = "producent.rabbitmq")
 @ConfigurationProperties(prefix = "adapter.mq.amqp")
 public class AmqpProducentConfig {
 	

@@ -1,8 +1,6 @@
 package com.rabbitmq.cwiczenia.rabbitmqworker1.dto;
 
 import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
 
 
 

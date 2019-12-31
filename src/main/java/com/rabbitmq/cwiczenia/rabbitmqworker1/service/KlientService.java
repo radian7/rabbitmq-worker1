@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.dto.KlientDTO;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.jparepository.KlientJPARepository;
 import com.rabbitmq.cwiczenia.rabbitmqworker1.mapper.CkkKlienciMapper;
-import com.rabbitmq.cwiczenia.rabbitmqworker1.model.CkkKlienci;
 
 
 @Service
@@ -22,9 +21,9 @@ public class KlientService {
 		
 		CkkKlienciMapper mapper = Mappers.getMapper(CkkKlienciMapper.class);
         
-		KlientDTO klient = mapper.mapToKlientDTO(klientJPARepository.findByKlKod(kodCKK));
+
 		
-		return klient;
+		return mapper.mapToKlientDTO(klientJPARepository.findByKlKod(kodCKK));
 	}
 	
 }
